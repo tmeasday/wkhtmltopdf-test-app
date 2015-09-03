@@ -1,4 +1,5 @@
 Package.describe({
+  name: 'classcraft:meteor-wkhtmltopdf',
   summary: "Meteor smart package for meteor-wkhtmltopdf.",
   version: "0.1.5",
   git: "https://github.com/classcraft/classcraft-meteor-wkhtmltopdf"

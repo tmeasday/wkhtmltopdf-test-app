@@ -18,6 +18,7 @@ if (Meteor.isClient) {
 
 if (Meteor.isServer) {
   Meteor.startup(function () {
+    console.log(wkhtmltopdf.command);
     wkhtmltopdf('http://google.com/', function (code, signal) {
       console.log('output', code, signal);
     });
