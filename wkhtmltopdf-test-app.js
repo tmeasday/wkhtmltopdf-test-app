@@ -17,10 +17,11 @@ if (Meteor.isClient) {
 }
 
 if (Meteor.isServer) {
+  var fs = Npm.require('fs');
   Meteor.startup(function () {
     console.log(wkhtmltopdf.command);
-    wkhtmltopdf('http://google.com/', function (code, signal) {
-      console.log('output', code, signal);
-    });
+    wkhtmltopdf('http://google.com/', function(code, signal) {
+      console.log('worked!', fs.readFileSync('out.pdf').toString().slice(0, 100));
+    }).pipe(fs.createWriteStream('out.pdf'));
   });
 }
